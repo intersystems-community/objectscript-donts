@@ -9,6 +9,7 @@ ClassMethod ClassNotFound() As %String
 
 ClassMethod ToManyArguments(Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10, Arg11) As %Status
 {
+    set (Arg1,Arg2,Arg3,Arg4,Arg5,Arg6,Arg7,Arg8,Arg9,Arg10,Arg11)=42
     return $$$OK
 }
 
