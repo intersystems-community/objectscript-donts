@@ -41,7 +41,7 @@ ClassMethod MissingParentesisInIfExpression() As %String
 
 ClassMethod NoReturnValue() As %Status
 {
-    set a=42
+    Write $ZVersion
 }
 
 ClassMethod NoSQLCODECheck() As %Status
