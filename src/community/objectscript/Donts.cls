@@ -72,17 +72,13 @@ ClassMethod DotSyntax() As %Status
     Do
     .set a=1
     ..set b=2
-    ..quit
     .set a=b
-    .quit
     ret $$$OK
 }
 
 ClassMethod DeprecatedZF() As %Status
 {
-    set x=$ZF(-1)
-    set y=$ZF(-2)
-    Quit $$$OK
+    return $ZF(-1)+$ZF(-2)
 }
 
 ClassMethod VariableSetButNotUsed() As %Status
@@ -108,17 +104,17 @@ ClassMethod VariableAsCommandName() As %Status
     Quit $$$OK
 }
 
-ClassMethod NonASCIIVariableName() As %Status
+ClassMethod NonASCIIVariableName() As %String
 {
     set с=1
     set b=c
-    Quit $$$OK
+    Quit b
 }
 
-ClassMethod VariableNotFound() As %Status
+ClassMethod VariableNotFound() As %String
 {
     set a=b
-    Quit $$$OK
+    Quit a
 }
 
 }
