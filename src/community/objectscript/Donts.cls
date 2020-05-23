@@ -7,4 +7,10 @@ ClassMethod ClassNotFound() As %String
     return result
 }
 
+ClassMethod ToManyArguments(Arg1,Arg2,Arg3,Arg4,Arg5,Arg6,Arg7,Arg8,Arg9,Arg10, Arg11) As %Status
+{
+    return $$$OK
+}
+
+
 }
