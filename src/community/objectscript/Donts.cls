@@ -1,6 +1,39 @@
 Class community.objectscript.Donts
 {
 
+ClassMethod NoReturnValue() As %Status
+{
+    Write $ZVersion
+}
+
+ClassMethod MissingParentesisInIfExpression() As %String
+{
+    Set a=1
+    Set b=2
+
+    if a=1 || b=2
+    {
+        set result="Hello "
+    }
+    else{
+        set result="Goodbye"
+        }
+    return result
+}
+
+ClassMethod NonASCIIVariableName() As %String
+{
+    set с=1
+    set b=c
+    Quit b
+}
+
+ClassMethod VariableNotFound() As %String
+{
+    set a=b
+    Quit a
+}
+
 ClassMethod ClassNotFound() As %String
 {
     set result=##class(Unknown.Class).MethodName()
@@ -22,26 +55,6 @@ ClassMethod MethodNotFound() As %Status
 {
     do ##class(%Boolean).True()  ; there is no such method in %Boolean
     return $$$OK
-}
-
-ClassMethod MissingParentesisInIfExpression() As %String
-{
-    Set a=1
-    Set b=2
-
-    if a=1 || b=2
-    {
-        set result="Hello "
-    }
-    else{
-        set result="Goodbye"
-        }
-    return result
-}
-
-ClassMethod NoReturnValue() As %Status
-{
-    Write $ZVersion
 }
 
 ClassMethod NoSQLCODECheck() As %Status
@@ -102,19 +115,6 @@ ClassMethod VariableAsCommandName() As %Status
     set open=11
     set read=12
     Quit $$$OK
-}
-
-ClassMethod NonASCIIVariableName() As %String
-{
-    set с=1
-    set b=c
-    Quit b
-}
-
-ClassMethod VariableNotFound() As %String
-{
-    set a=b
-    Quit a
 }
 
 }
